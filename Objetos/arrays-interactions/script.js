@@ -59,9 +59,13 @@ const compras = [{
   }
 ]
 
-let totalPrice = 0;
-compras.forEach((item) => {
-  const itemPrice = +item.preco.replace('R$', '').trim().replace(',', '.');
-  totalPrice = totalPrice + itemPrice;
-})
-console.log(totalPrice);
+// compras.forEach((item) => {
+//   const itemPrice = +item.preco.replace('R$', '').trim().replace(',', '.');
+//   totalPrice += itemPrice;
+
+const totalValue = compras.reduce((deposit, withdrawn) => {
+  const itemPrice = +withdrawn.preco.replace('R$', '').trim().replace(',', '.');
+  return deposit + itemPrice;
+}, 0)
+
+console.log(totalValue);
