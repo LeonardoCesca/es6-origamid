@@ -12,7 +12,7 @@ console.log(totalCaracters);
 // tag, classe e conteudo.
 function createElement(tag, classe, conteudo) {
   const element = document.createElement(tag);
-  classe ? element.classeList.add(classe) : null;
+  classe ? element.classList.add(classe) : null;
   conteudo ? element.innerHTML = conteudo : null;
   return element;
 }
@@ -23,4 +23,10 @@ console.log(createElement('li', 'azul', 'Esse é o conteúdo'));
 // essa nova função deverá sempre criar h1 com a
 // classe titulo. Porém o parâmetro conteudo continuará dinâmico
 
+const h1Title = createElement.bind(null, 'h1', 'titulo');
 
+const courseJS = h1Title('Javascript Course');
+const courseCSS = h1Title('CSS Course');
+
+console.log(courseJS);
+console.log(courseCSS);
