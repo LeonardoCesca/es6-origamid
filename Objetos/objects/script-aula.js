@@ -40,3 +40,18 @@ const moto = {
 
 Object.assign(moto, funcaoAutomovel);
 console.log(moto)
+
+const moto2 = {
+    capacete: true
+}
+
+Object.defineProperties(moto2, {
+    rodas: {
+        get() {
+            return this._rodas;
+        },
+        set(valor) {
+            this._rodas = valor * 4;  
+        } 
+    }
+})
