@@ -1,3 +1,9 @@
-const h1 = document.querySelector('h1');
+const div = document.querySelector('div');
 
-console.log(Object.prototype.toString.call(h1));    
+div.dataset.height = 1000;
+
+delete div.dataset.width;
+
+div.dataset.totalHeight = 2000;
+
+console.log(div.dataset);    
