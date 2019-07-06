@@ -1,6 +1,4 @@
-export default function initTooltip() {
-
-}
+export default function initTooltip() {}
 
 const toolTips = document.querySelectorAll('[data-tooltip]');
 
