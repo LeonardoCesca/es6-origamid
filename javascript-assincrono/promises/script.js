@@ -34,7 +34,13 @@ const data = new Promise((resolve) => {
     }, 1500)
 })
 
-const ok = Promise.all([login, data]);
+// const ok = Promise.all([login, data]);
+
+// ok.then((resolve) => {
+//     console.log(resolve);
+// })
+
+const ok = Promise.race([login, data]);
 
 ok.then((resolve) => {
     console.log(resolve);
