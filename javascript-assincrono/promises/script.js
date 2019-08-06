@@ -1,12 +1,21 @@
 const promise = new Promise((resolve, reject) => {
-    let condition = true;
+    let condition = false;
     if(condition) {
-        resolve('Estou pronto');
+        setTimeout(() =>{
+            resolve('Estou pronto');
+        }, 1000);
     } else {
         reject(Error('Um erro ocorreu'));
     }
 });
 
-promise.then((resolved) => {
+const returned = promise.then((resolved) => { 
+    console.log(resolved); 
+    return 'oi';
+}).then((resolved) => {
     console.log(resolved);
+}).catch((reject) => {
+    console.log(reject);
 })
+
+console.log(returned);
