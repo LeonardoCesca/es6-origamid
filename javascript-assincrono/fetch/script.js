@@ -1,9 +1,7 @@
-const doc = fetch('./doc.txt');
+const cep = fetch('https://viacep.com.br/ws/01001000/json/');
 
-doc.then(resolucao => {
-    return resolucao.text()
-}).then((body) => {
+cep.then(r => r.json())
+.then((body) => {
     const conteudo = document.querySelector('.conteudo')
-    conteudo.innerText = body;
-    console.log(body)
+    conteudo.innerText = body.logradouro;
 })
