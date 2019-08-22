@@ -1,5 +1,8 @@
-const cep = fetch('https://viacep.com.br/ws/01001000/json/');
+const archive = fetch('./docs.txt');
 
-cep.then(response => {
+archive.then(response => {
     console.log(response.status)
+    if(response.status === 404) {
+        console.log('Página não existe')
+    }
 })
