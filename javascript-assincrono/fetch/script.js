@@ -1,7 +1,8 @@
-const cep = fetch('https://viacep.com.br/ws/01001000/json/');
+const imagem = fetch('./imagem.png')
 
-cep.then(r => r.json())
+imagem.then(r => r.blob())
 .then((body) => {
-    const conteudo = document.querySelector('.conteudo')
-    conteudo.innerText = body.logradouro;
+    const blobUrl = URL.createObjectURL(body);
+    const imgDom = document.querySelector('img')
+    imgDom.src = blobUrl;
 })
