@@ -1,15 +1,6 @@
 const cep = fetch('https://viacep.com.br/ws/01001000/json/');
 
-cep.then(r => {
-    const r2 = r.clone();
-    r.text().then((text) => {
-        console.log(text);
-    })
-    r2.json().then((json) => {
-        console.log(json);
-    })
-    console.log(r)
-})
-.then((body) => {
-   console.log(body)
+cep.then(response => {
+    console.log(response)
+    response.headers.forEach(console.log)
 })
