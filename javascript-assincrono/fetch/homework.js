@@ -43,3 +43,17 @@ fetchBtc();
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
 
+const btnProxima = document.querySelector('.proxima');
+const pPiada = document.querySelector('.piada')
+
+function puxarPiada() {
+    fetch('https://api.chucknorris.io/jokes/random')
+    .then(response => response.json())
+    .then(piada => {
+        pPiada.innerText = piada.value;
+    })
+}
+
+btnProxima.addEventListener('click', puxarPiada)
+
+puxarPiada();
