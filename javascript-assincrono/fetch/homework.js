@@ -25,6 +25,20 @@ function buscaCep(cep) {
 // retorne no DOM o valor de compra da bitcoin and reais.
 // atualize este valor a cada 30s
 
+const btcDisplay = document.querySelector('.btc');
+
+function fetchBtc() {
+    fetch('https://blockchain.info/ticker')
+    .then(response => response.json())
+    .then(btcJson => {
+        btcDisplay.innerText = ('R$ ' +btcJson.BRL.buy).replace('.', ',');
+    })
+}
+
+setInterval(fetchBtc, 1000 * 30);
+
+fetchBtc();
+
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
