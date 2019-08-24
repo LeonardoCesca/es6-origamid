@@ -2,7 +2,6 @@ fetch('./dados.json')
 .then(response => response.text())
 .then(jsonText => {
     const finalJson = JSON.parse(jsonText)
-    console.log(finalJson)
 })
 
 const configuracoes = {
@@ -11,6 +10,6 @@ const configuracoes = {
     aula: "2.1 Javascript",
 }
 
-const stringConfig = JSON.stringify(configuracoes)
+localStorage.config = JSON.stringify(configuracoes)
 
-console.log(stringConfig)
+console.log(localStorage.config)
