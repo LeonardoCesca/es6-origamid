@@ -1,18 +1,11 @@
-// Diferença entre async / then
+async function iniciarAsync() {
+    try {
+        const dadosResponse = await fetch('./dados.json');
+        const dadosJSON = await dadosResponse.json();
+        document.body.innerText = dadosJSON.aula;
+    } catch(error) {
+        console.log(error)
+    }
+}
 
-function iniciarFetch() {
-    fetch('./dados.json')
-    .then(dadosResponse => dadosResponse.json())
-    .then(dadosJSON => {
-      document.body.innerText = dadosJSON.titulo;
-    })
-  }
-  iniciarFetch();
-  
-  async function iniciarAsync() {
-    const dadosResponse = await fetch('./dados.json');
-    const dadosJSON = await dadosResponse.json();
-    document.body.innerText = dadosJSON.titulo;
-  }
-  iniciarAsync();
-  
+iniciarAsync();
