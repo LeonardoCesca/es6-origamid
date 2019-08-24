@@ -12,4 +12,4 @@ const configuracoes = {
 
 localStorage.config = JSON.stringify(configuracoes)
 
-console.log(localStorage.config)
+console.log(JSON.parse(localStorage.config))
