@@ -18,3 +18,16 @@ async function asyncSemPromise() {
 }
 
 asyncSemPromise()
+
+async function asyncComPromise() {
+    //Console irá espera
+    await new Promise(resolve => {
+        setTimeout(() => {
+            console.log('Depois de 1s')
+            resolve()
+        }, 1000)
+    })
+    console.log('acabou')
+}
+
+asyncComPromise()
