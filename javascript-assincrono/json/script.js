@@ -1,5 +1,7 @@
 fetch('./dados.json')
 .then(response => response.json())
 .then(json => {
-    console.log(json)
+    json.forEach(materia => {
+        console.log(materia)
+    })
 })
