@@ -11,6 +11,12 @@ async function fetchPage(url) {
     replaceContent(pageText)
 }
 
+function replaceContent(newText) {
+    const newHtml = document.createElement('div')
+    newHtml.innerHTML = newText
+    console.log(newHtml)
+}
+
 links.forEach(link => {
     link.addEventListener('click', handleClick)
 })
