@@ -19,6 +19,8 @@ function replaceContent(newText) {
     const newContent = newHtml.querySelector('.content')
 
     oldContent.innerHTML = newContent.innerHTML;
+
+    document.title = newHtml.querySelector('title').innerText;
 }
 
 links.forEach(link => {
