@@ -14,7 +14,11 @@ async function fetchPage(url) {
 function replaceContent(newText) {
     const newHtml = document.createElement('div')
     newHtml.innerHTML = newText
-    console.log(newHtml)
+
+    const oldContent = document.querySelector('.content')
+    const newContent = newHtml.querySelector('.content')
+
+    oldContent.innerHTML = newContent.innerHTML;
 }
 
 links.forEach(link => {
