@@ -3,6 +3,7 @@ const links = document.querySelectorAll('a');
 function handleClick(event) {
     event.preventDefault();
     fetchPage(event.target.href)
+    window.history.pushState(null, null, event.target.href)
 }
 
 async function fetchPage(url) {
