@@ -5,8 +5,10 @@ function handleClick(event) {
     fetchPage(event.target.href)
 }
 
-function fetchPage(url) {
-    console.log(url)
+async function fetchPage(url) {
+    const pageResponse = await fetch(url)
+    const pageText = await pageResponse.text()
+    replaceContent(pageText)
 }
 
 links.forEach(link => {
